@@ -10,8 +10,8 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
       new QueryClient({
         defaultOptions: {
           queries: {
-            // ✅ disables tab refetch globally
-            // ✅ optional: no refetch on reconnect
+            refetchOnWindowFocus: false, // ✅ disables tab refetch globally
+            refetchOnReconnect: false, // ✅ optional: no refetch on reconnect
             staleTime: 1000 * 60 * 10, // ✅ optional: cache for 10 minutes
           },
         },
